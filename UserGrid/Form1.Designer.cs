@@ -31,11 +31,17 @@ namespace UserGrid
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usersDataSet = new UserGrid.UsersDataSet();
-            this.usersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersDataSet = new UserGrid.UsersDataSet();
             this.usersTableAdapter = new UserGrid.UsersDataSetTableAdapters.UsersTableAdapter();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new UserGrid.UsersDataSetTableAdapters.TableAdapterManager();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -48,58 +54,88 @@ namespace UserGrid
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.iduserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jelszoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iduserDataGridViewTextBoxColumn,
-            this.nevDataGridViewTextBoxColumn,
-            this.jelszoDataGridViewTextBoxColumn,
-            this.adminDataGridViewTextBoxColumn,
-            this.Gender});
-            this.dataGridView1.DataSource = this.usersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(551, 320);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // usersDataSet
-            // 
-            this.usersDataSet.DataSetName = "UsersDataSet";
-            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersDataSetBindingSource
-            // 
-            this.usersDataSetBindingSource.DataSource = this.usersDataSet;
-            this.usersDataSetBindingSource.Position = 0;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
             this.usersBindingSource.DataSource = this.usersDataSetBindingSource;
             // 
+            // usersDataSetBindingSource
+            // 
+            this.usersDataSetBindingSource.DataSource = this.usersDataSet;
+            this.usersDataSetBindingSource.Position = 0;
+            // 
+            // usersDataSet
+            // 
+            this.usersDataSet.DataSetName = "UsersDataSet";
+            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.usersDataSet;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = UserGrid.UsersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsersTableAdapter = this.usersTableAdapter;
+            // 
+            // usersDataGridView
+            // 
+            this.usersDataGridView.AutoGenerateColumns = false;
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.usersDataGridView.DataSource = this.usersBindingSource1;
+            this.usersDataGridView.Location = new System.Drawing.Point(73, 82);
+            this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.Size = new System.Drawing.Size(591, 296);
+            this.usersDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_user";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id_user";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nev";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nev";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Jelszo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Jelszo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Admin";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Admin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.usersBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,62 +247,21 @@ namespace UserGrid
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // iduserDataGridViewTextBoxColumn
-            // 
-            this.iduserDataGridViewTextBoxColumn.DataPropertyName = "Id_user";
-            this.iduserDataGridViewTextBoxColumn.HeaderText = "Azonosító";
-            this.iduserDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.iduserDataGridViewTextBoxColumn.Name = "iduserDataGridViewTextBoxColumn";
-            this.iduserDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iduserDataGridViewTextBoxColumn.ToolTipText = "A felhasználó egyedi azonosítója";
-            // 
-            // nevDataGridViewTextBoxColumn
-            // 
-            this.nevDataGridViewTextBoxColumn.DataPropertyName = "Nev";
-            this.nevDataGridViewTextBoxColumn.HeaderText = "Név";
-            this.nevDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.nevDataGridViewTextBoxColumn.Name = "nevDataGridViewTextBoxColumn";
-            this.nevDataGridViewTextBoxColumn.ToolTipText = "Felhasználó teljes neve";
-            // 
-            // jelszoDataGridViewTextBoxColumn
-            // 
-            this.jelszoDataGridViewTextBoxColumn.DataPropertyName = "Jelszo";
-            this.jelszoDataGridViewTextBoxColumn.HeaderText = "Jelszó";
-            this.jelszoDataGridViewTextBoxColumn.MaxInputLength = 15;
-            this.jelszoDataGridViewTextBoxColumn.Name = "jelszoDataGridViewTextBoxColumn";
-            this.jelszoDataGridViewTextBoxColumn.ToolTipText = "Minimum 4 karakter";
-            // 
-            // adminDataGridViewTextBoxColumn
-            // 
-            this.adminDataGridViewTextBoxColumn.DataPropertyName = "Admin";
-            this.adminDataGridViewTextBoxColumn.HeaderText = "Admin";
-            this.adminDataGridViewTextBoxColumn.Name = "adminDataGridViewTextBoxColumn";
-            this.adminDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.adminDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.adminDataGridViewTextBoxColumn.ToolTipText = "Ha igen, akkor adminisztrátori jogokkal rendelkezik";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Items.AddRange(new object[] {
-            "Férfi",
-            "Nő"});
-            this.Gender.Name = "Gender";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.usersDataGridView);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -276,12 +271,17 @@ namespace UserGrid
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource usersDataSetBindingSource;
         private UsersDataSet usersDataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private UsersDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource1;
+        private UsersDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView usersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -294,11 +294,6 @@ namespace UserGrid
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iduserDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nevDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jelszoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn adminDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Gender;
     }
 }
 
