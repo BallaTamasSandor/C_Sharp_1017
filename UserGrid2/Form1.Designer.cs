@@ -52,7 +52,8 @@ namespace UserGrid2
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iktatoDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
@@ -212,7 +213,8 @@ namespace UserGrid2
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.Gender});
             this.usersDataGridView.DataSource = this.usersBindingSource;
             this.usersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usersDataGridView.Location = new System.Drawing.Point(0, 25);
@@ -222,21 +224,30 @@ namespace UserGrid2
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_user";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id_user";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Azonosító";
+            this.dataGridViewTextBoxColumn1.MaxInputLength = 20;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.ToolTipText = "A User egyedi azonosítója";
+            this.dataGridViewTextBoxColumn1.Width = 80;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nev";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nev";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Név";
+            this.dataGridViewTextBoxColumn2.MaxInputLength = 20;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ToolTipText = "A User teljes neve";
+            this.dataGridViewTextBoxColumn2.Width = 52;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Jelszo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Jelszo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Jelszó";
+            this.dataGridViewTextBoxColumn3.MaxInputLength = 15;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
@@ -244,6 +255,18 @@ namespace UserGrid2
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Admin";
             this.dataGridViewTextBoxColumn4.HeaderText = "Admin";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Items.AddRange(new object[] {
+            "Férfi",
+            "Nő"});
+            this.Gender.Name = "Gender";
+            this.Gender.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form1
             // 
@@ -289,7 +312,8 @@ namespace UserGrid2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Gender;
     }
 }
 
