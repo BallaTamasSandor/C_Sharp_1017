@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserGrid", "UserGrid\UserGr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserGrid2", "UserGrid2\UserGrid2.csproj", "{32AAC655-BDA6-45AD-9DB2-A90E56A90B06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iktatas", "Iktatas\Iktatas.csproj", "{D2621662-2E90-422F-AA32-204833BDE898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{32AAC655-BDA6-45AD-9DB2-A90E56A90B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32AAC655-BDA6-45AD-9DB2-A90E56A90B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32AAC655-BDA6-45AD-9DB2-A90E56A90B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2621662-2E90-422F-AA32-204833BDE898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2621662-2E90-422F-AA32-204833BDE898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2621662-2E90-422F-AA32-204833BDE898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2621662-2E90-422F-AA32-204833BDE898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
