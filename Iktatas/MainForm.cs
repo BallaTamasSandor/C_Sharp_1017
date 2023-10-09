@@ -28,5 +28,23 @@ namespace Iktatas
             OsztalyokForm frm = new OsztalyokForm();
             frm.Show();
         }
+
+        private void személyekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsersForm frm = new UsersForm();
+            frm.Show();
+        }
+
+        private void levelezésiTémákToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TemakForm frm = new TemakForm();
+            frm.Show();
+        }
+
+        private void iktatásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //IktatForm frm = new IktatForm();
+            //frm.Show();
+        }
     }
 }
