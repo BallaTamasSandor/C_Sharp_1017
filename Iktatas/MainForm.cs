@@ -43,8 +43,8 @@ namespace Iktatas
 
         private void iktatásToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //IktatForm frm = new IktatForm();
-            //frm.Show();
+            IktatForm frm = new IktatForm();
+            frm.Show();
         }
     }
 }

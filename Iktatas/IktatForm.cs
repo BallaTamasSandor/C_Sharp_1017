@@ -16,5 +16,26 @@ namespace Iktatas
         {
             InitializeComponent();
         }
+
+        private void iktatBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.iktatBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.iktatDS);
+
+        }
+
+        private void IktatForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'iktatDS.Temak' table. You can move, or remove it, as needed.
+            this.temakTableAdapter.Fill(this.iktatDS.Temak);
+            // TODO: This line of code loads data into the 'iktatDS.Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter1.Fill(this.iktatDS.Users);
+            // TODO: This line of code loads data into the 'usersDS.Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.usersDS.Users);
+            // TODO: This line of code loads data into the 'iktatDS.iktat' table. You can move, or remove it, as needed.
+            this.iktatTableAdapter.Fill(this.iktatDS.iktat);
+
+        }
     }
 }
