@@ -59,9 +59,9 @@ namespace Iktatas
             this.temakTableAdapter = new Iktatas.IktatDSTableAdapters.TemakTableAdapter();
             this.temakBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnIktatoszam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iktatDS)).BeginInit();
@@ -229,9 +229,9 @@ namespace Iktatas
             this.iktatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.iktatDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.cnIktatoszam,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.cnDatum,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.iktatDataGridView.DataSource = this.iktatBindingSource;
@@ -240,6 +240,7 @@ namespace Iktatas
             this.iktatDataGridView.Name = "iktatDataGridView";
             this.iktatDataGridView.Size = new System.Drawing.Size(800, 425);
             this.iktatDataGridView.TabIndex = 1;
+            this.iktatDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.iktatDataGridView_DefaultValuesNeeded);
             // 
             // usersDS
             // 
@@ -290,11 +291,11 @@ namespace Iktatas
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // cnIktatoszam
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Iktatoszam";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Iktatószám";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.cnIktatoszam.DataPropertyName = "Iktatoszam";
+            this.cnIktatoszam.HeaderText = "Iktatószám";
+            this.cnIktatoszam.Name = "cnIktatoszam";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -307,13 +308,13 @@ namespace Iktatas
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "Id_user";
             // 
-            // dataGridViewTextBoxColumn4
+            // cnDatum
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Datum";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Dátum";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.ToolTipText = "A levél beérkezésének dátuma";
+            this.cnDatum.DataPropertyName = "Datum";
+            this.cnDatum.HeaderText = "Dátum";
+            this.cnDatum.Name = "cnDatum";
+            this.cnDatum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cnDatum.ToolTipText = "A levél beérkezésének dátuma";
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -388,12 +389,12 @@ namespace Iktatas
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private IktatDSTableAdapters.TemakTableAdapter temakTableAdapter;
         private System.Windows.Forms.BindingSource temakBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.BindingSource temakBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnIktatoszam;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnDatum;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

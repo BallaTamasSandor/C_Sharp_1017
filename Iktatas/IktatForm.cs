@@ -12,9 +12,12 @@ namespace Iktatas
 {
     public partial class IktatForm : Form
     {
+        private int sorszam;
+
         public IktatForm()
         {
             InitializeComponent();
+            sorszam = 0;
         }
 
         private void iktatBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -36,6 +39,17 @@ namespace Iktatas
             // TODO: This line of code loads data into the 'iktatDS.iktat' table. You can move, or remove it, as needed.
             this.iktatTableAdapter.Fill(this.iktatDS.iktat);
 
+        }
+
+
+        private void iktatDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            string ma = DateTime.Today.ToString();
+            this.sorszam++;
+
+            e.Row.Cells["cnIktatoszam"].Value = ma.Substring(0, 4) + ma.Substring(6, 2) + ma.Substring(10,2) + "/" + this.sorszam.ToString();
+
+            e.Row.Cells["cnDatum"].Value = ma;
         }
     }
 }
