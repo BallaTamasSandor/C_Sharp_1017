@@ -41,7 +41,6 @@ namespace Iktatas
 
         }
 
-
         private void iktatDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             string ma = DateTime.Today.ToString(); // ma létrehozása
@@ -52,5 +51,18 @@ namespace Iktatas
             e.Row.Cells["cnDatum"].Value = ma;
         }
 
+        private void iktatDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            string ma = DateTime.Today.ToShortDateString();
+
+            if (e.FormattedValue.ToString() != ma)
+            {
+                MessageBox.Show("Hibás dátum!");
+            }
+            else
+            {
+                MessageBox.Show("Jó dátum!");
+            }
+        }
     }
 }
