@@ -44,12 +44,13 @@ namespace Iktatas
 
         private void iktatDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
-            string ma = DateTime.Today.ToString();
+            string ma = DateTime.Today.ToString(); // ma létrehozása
             this.sorszam++;
 
             e.Row.Cells["cnIktatoszam"].Value = ma.Substring(0, 4) + ma.Substring(6, 2) + ma.Substring(10,2) + "/" + this.sorszam.ToString();
 
             e.Row.Cells["cnDatum"].Value = ma;
         }
+
     }
 }
